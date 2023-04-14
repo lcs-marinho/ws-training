@@ -38,7 +38,7 @@ export class WebSocketService {
     });
   }
 
-  public sendMessage(message: string): void {
+  public sendMessage(message: any): void {
     this.stompClient?.publish({
       destination: '/app/hello',
       body: JSON.stringify(message)

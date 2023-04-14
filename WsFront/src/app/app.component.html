@@ -1,5 +1,16 @@
-<button (click)="sendMessage('teste de msg')">WebSocket</button>
+<button
+  (click)="
+    sendMessage({
+      id: 1,
+      name: 'Batman',
+      attribute: 'force',
+      attribute_value: 97
+    })
+  "
+>
+  WebSocket
+</button>
 
-<p *ngFor="let msg of messages">{{msg}}</p>
+<p *ngFor="let msg of messages">{{ msg }}</p>
 
 <button (click)="show()">Exibir mensagens</button>
