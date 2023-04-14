@@ -19,11 +19,11 @@ export class AppComponent {
     this.subscription = this.wsService.connect().subscribe((message: any) => {
       // this.messages.push(JSON.parse(message.body).message);
       const msg = JSON.parse(message.body)
-      
+      console.log(msg)
     });
   }
 
-  public sendMessage(message: string): void {
+  public sendMessage(message: any): void {
     this.wsService.sendMessage(message);
   }
 
