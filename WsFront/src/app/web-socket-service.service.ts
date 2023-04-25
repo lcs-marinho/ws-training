@@ -28,17 +28,10 @@ export class WebSocketService {
         });
       };
 
-      // this.stompClient.subscribe('topic/greetings', value => {
-      //   console.log(value);
-      // });
-
-      this.subject = observer;
-
-
     });
   }
 
-  public sendMessage(message: string): void {
+  public sendMessage(message: any): void {
     this.stompClient?.publish({
       destination: '/app/hello',
       body: JSON.stringify(message)

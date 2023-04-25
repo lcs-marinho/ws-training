@@ -9,8 +9,9 @@ import { WebSocketService } from './web-socket-service.service';
 export class AppComponent {
   title = 'WsFront';
 
-  messages: string[] = [];
-  greeting: any;
+  messages: any[] = [];
+  msg?: string;
+  name?: string;
   private subscription: any;
 
   constructor(private wsService: WebSocketService){}
@@ -23,8 +24,8 @@ export class AppComponent {
     });
   }
 
-  public sendMessage(message: string): void {
-    this.wsService.sendMessage(message);
+  public sendMessage(message: any): void {
+    this.wsService.sendMessage({username: this.name, message: this.msg});
   }
 
   ngOnDestroy() {
