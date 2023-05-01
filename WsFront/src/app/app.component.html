@@ -1,5 +1,14 @@
-<button (click)="sendMessage('teste de msg')">WebSocket</button>
+<div class="content">
+  <span>
+      <p *ngFor="let msg of messages">{{ msg.username }}: {{ msg.message }}</p>
+  </span>
 
-<p *ngFor="let msg of messages">{{msg}}</p>
-
-<button (click)="show()">Exibir mensagens</button>
+  <div class="sendMessage">
+    <input
+      type="text"
+      placeholder="escreva sua mensagem"
+      #textinput
+    />
+    <button (click)="sendMessage(textinput)">Enviar</button>
+  </div>
+</div>
